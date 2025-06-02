@@ -6,7 +6,7 @@
 //   base: "/",
 //   plugins: [react()],
 //   resolve: {
-//     alias: { "@": path.resolve(__dirname, "./src") },
+//     alias: { "@": path.resolve(__dirname, "./src") },More actions
 //   },
 // });
 
@@ -16,8 +16,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  
   base: "/",
+  // base: "/thapelo-web-portfolio",
   plugins: [react()],
   resolve: {
     alias: {
@@ -40,7 +40,7 @@ export default defineConfig({
     port: 3000,
     open: true, // Automatically open the app in browser
   },
-  preview: {
-    port: 3000,
-  },
-});
+    preview: {
+      port: 3000,
+    },
+  });
