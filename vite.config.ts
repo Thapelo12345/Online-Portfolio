@@ -16,8 +16,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/",
-  // base: "/thapelo-web-portfolio",
+  // base: "/",
+  base: process.env.VITE_BASE_PATH || "/Online-Portfolio",
   plugins: [react()],
   resolve: {
     alias: {
