@@ -45,7 +45,7 @@ const projects = [
   {
     id: 5,
     title: "Local Company",
-    description: "This is a website I built for a local company called L.S.E.B. The client was someone from my local community, and their company rents out sound equipment for corporate events, concerts, and small events like private parties and weddings. This was a great experience, as it was my first time working with a real client instead of just building projects for myself",
+    description: "I built this website for L.S.E.B., a local company that rents sound equipment for events. It was my first real client project, a valuable experience beyond personal projects, working with someone from my community to meet their business needs.",
     image: "/Projects/L.S.E.B Trading & Projects - Quality Quantified Sound - Google Chrome 2025_05_31 15_52_16.png",
     techs: ["Vite React", "AI loveable", "Tailwindcss", "TypeScript"],
     liveUrl: "https://papaya-faun-8172d1.netlify.app/",
