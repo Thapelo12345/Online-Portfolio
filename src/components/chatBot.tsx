@@ -54,7 +54,7 @@ export default function ChatBot() {
 
   return (
     <div className="flex flex-col items-center w-full h-[360px] :lgh-full p-2">
-      <h1 className="border-2 w-fit h-fit px-4 p-1 rounded-lg m-2">
+      <h1 className="w-fit h-fit px-4 p-1 rounded-lg m-2">
         Hi I am ChatBot
       </h1>
 
@@ -82,7 +82,7 @@ export default function ChatBot() {
       {/* End of chat section */}
 
       <input
-        className="w-[70%] mb-2 text-black text-sm bg-[whitesmoke] rounded-sm p-2 outline-none focus:shadow-lg shadow-green-800"
+        className="w-[70%] mb-2 text-black text-sm bg-[whitesmoke] rounded-md p-2 outline-none focus:shadow-lg shadow-green-800"
         style={{
           boxShadow: "inset 2px 2px 5px black, inset -2px -2px 5px white",
         }}

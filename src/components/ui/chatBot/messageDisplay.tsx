@@ -1,10 +1,22 @@
+import { motion } from "framer-motion";
+
 type Prop = {
   client: string;
   msg: string;
 };
 export default function MessageDisplay({ msg, client }: Prop) {
   return (
-    <div
+    <motion.div
+    initial={{ opacity: 0, scale: 0.1 }} 
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ 
+      duration: 0.4, 
+      type:"spring",
+       bounce: 0.4,
+       damping: 10,
+       stiffness: 200,
+
+    }}
       className={`font-semibold p-2 m-2 text-xs w-fit flex-wrap rounded-tr-2xl rounded-tl-2xl
             ${
               client === "bot"
@@ -20,6 +32,6 @@ export default function MessageDisplay({ msg, client }: Prop) {
       }}
     >
       {msg}
-    </div>
+    </motion.div>
   );
 }
