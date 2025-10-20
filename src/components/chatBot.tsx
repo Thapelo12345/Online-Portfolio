@@ -1,5 +1,6 @@
 import MessageDisplay from "./ui/chatBot/messageDisplay";
 import { useEffect, useState, useRef } from "react";
+import { SendIcon } from "lucide-react";
 
 type ClientMessage = {
   sender: string;
@@ -54,8 +55,8 @@ export default function ChatBot() {
 
   return (
     <div className="flex flex-col items-center w-full h-[360px] :lgh-full p-2">
-      <h1 className="w-fit h-fit px-4 p-1 rounded-lg m-2">
-        Hi I am ChatBot
+      <h1 className="bg-primary/20 font-bold text-blue-500 w-fit h-fit px-4 p-1 rounded-lg m-2">
+      ASK ME ANY QUETSION
       </h1>
 
       {/* this is the chat section */}
@@ -83,16 +84,14 @@ export default function ChatBot() {
 
       <input
         className="w-[70%] mb-2 text-black text-sm bg-[whitesmoke] rounded-md p-2 outline-none focus:shadow-lg shadow-green-800"
-        style={{
-          boxShadow: "inset 2px 2px 5px black, inset -2px -2px 5px white",
-        }}
+      
         value={userMessage}
         placeholder="Ask me a question about myself"
         onChange={(e) => setMessage(e.target.value)}
         type="text"
       />
       <button
-        className="p-2 px-4 text-white bg-green-900 rounded-md"
+        className="p-2 px-4 font-bold text-lg text-primary bg-primary/20 rounded-md"
         onClick={() => {
           if (userMessage !== "") {
             // MessageSquareShare.push(userMessage)
@@ -116,7 +115,7 @@ export default function ChatBot() {
           }
         }}
       >
-        send
+       <SendIcon className="text-primary" size={20}/>
       </button>
     </div>
   );
