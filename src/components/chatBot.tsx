@@ -55,7 +55,7 @@ export default function ChatBot() {
 
   return (
     <div className="flex flex-col items-center w-full h-[360px] :lgh-full p-2">
-      <h1 className="bg-primary/20 font-bold text-blue-500 w-fit h-fit px-4 p-1 rounded-lg m-2">
+      <h1 className="bg-primary/20 text-sm md:text-lg font-bold text-blue-500 w-fit h-fit px-4 p-1 rounded-lg m-2">
       ASK ME ANY QUETSION
       </h1>
 

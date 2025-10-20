@@ -77,8 +77,8 @@ const ContactSection = () => {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <p className="text-muted-foreground">Phone</p>
-                  <p className="font-medium">063 893 7422</p>
+                  <p className="text-sm md:text-md text-muted-foreground">Phone</p>
+                  <p className="text-sm md:text-md font-medium">063 893 7422</p>
                 </div>
               </div>
 
@@ -87,8 +87,8 @@ const ContactSection = () => {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <p className="text-muted-foreground">Email</p>
-                  <p className="font-medium">pmanskhosana@gmail.com</p>
+                  <p className="text-sm md:text-md text-muted-foreground">Email</p>
+                  <p className="text-sm md:text-md font-medium">pmanskhosana@gmail.com</p>
                 </div>
               </div>
 
@@ -97,8 +97,8 @@ const ContactSection = () => {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <p className="text-muted-foreground">Location</p>
-                  <p className="font-medium">
+                  <p className="text-sm md:text-md text-muted-foreground">Location</p>
+                  <p className="text-sm md:text-md font-medium">
                     69 Maxwell Street, Kempton Park, 1619
                   </p>
                 </div>
@@ -106,7 +106,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="glass border-2 border-red-500 rounded-lg animate-fade-in">
+          <div className="glass rounded-lg animate-fade-in">
           <ChatBot />
           </div>
         </div>
