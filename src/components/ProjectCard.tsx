@@ -83,7 +83,7 @@ const ProjectCard = ({
           }}
         >
           <h3 className="text-xl font-bold mb-4">{title}</h3>
-          <p className="text-pretty text-muted-foreground mb-6">{description}</p>
+          <p className="text-pretty text-xs text-muted-foreground mb-6">{description}</p>
           
           <div className="flex flex-wrap gap-2 mb-6">
             {techs.map((tech) => (
@@ -101,18 +101,18 @@ const ProjectCard = ({
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 bg-secondary text-secondary-foreground py-2 px-4 rounded-lg hover:bg-secondary/80 transition-colors"
+              className="text-sm flex-1 flex items-center justify-center gap-2 bg-secondary text-secondary-foreground p-2 rounded-lg hover:bg-secondary/80 transition-colors"
             >
-              <Github size={18} />
+              <Github size={14} />
               <span>Code</span>
             </a>
             <a
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-2 px-4 rounded-lg hover:opacity-90 transition-colors"
+              className="text-sm flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground p-2 rounded-lg hover:opacity-90 transition-colors"
             >
-              <ExternalLink size={18} />
+              <ExternalLink size={14} />
               <span>Live</span>
             </a>
           </div>

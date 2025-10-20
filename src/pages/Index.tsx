@@ -10,7 +10,8 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    // <div className="min-h-screen flex flex-col">
+    <div className="h-screen w-screen flex flex-col">
       <ThemeToggle />
       <Navigation />
       <ThreeDBackground />
@@ -24,7 +25,7 @@ const Index = () => {
       
       <Footer />
     </div>
-  );
+  );  
 };
 
 export default Index;

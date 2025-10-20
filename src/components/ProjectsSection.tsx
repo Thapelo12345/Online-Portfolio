@@ -37,19 +37,19 @@ const projects = [
     title: "CRUD",
     description: "I built a CRUD app with Next.js to strengthen my full-stack skills, learn server-side rendering, improve API handling, and demonstrate real-world project experience as a self-taught web developer.",
     image: "/Projects/CRUD.png",
-    techs: ["Vite React", "Next js", "MongoDB"],
+    techs: ["Next js", "MongoDB"],
     liveUrl: "https://crud-jpabsylij-thapelos-projects-3e392397.vercel.app/",
     githubUrl: "https://github.com/Thapelo12345/CRUD",
   },
  
   {
     id: 5,
-    title: "Local Company",
-    description: "I built this website for L.S.E.B., a local company that rents sound equipment for events. It was my first real client project, a valuable experience beyond personal projects, working with someone from my community to meet their business needs.",
-    image: "/Projects/L.S.E.B Trading & Projects - Quality Quantified Sound - Google Chrome 2025_05_31 15_52_16.png",
-    techs: ["Vite React", "AI loveable", "Tailwindcss", "TypeScript"],
-    liveUrl: "https://papaya-faun-8172d1.netlify.app/",
-    githubUrl: "https://github.com/Thapelo12345/Mlindo",
+    title: "Finacial Tracker",
+    description: "Build a financial tracker app using next js and firebase to enhance my skills in modern web development, state management, and user interface design while creating a practical tool for managing personal finances.",
+    image: "/Projects/financial-tracker.png",
+    techs: ["next js", "firebase", "Tailwindcss","rechad js", "TypeScript", "redux"],
+    liveUrl: "https://financila-tracker.netlify.app/",
+    githubUrl: "https://github.com/Thapelo12345/finacial-tracker-0.2",
   },
 ];
 
