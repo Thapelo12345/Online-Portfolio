@@ -1,6 +1,7 @@
 import MessageDisplay from "./ui/chatBot/messageDisplay";
 import { useEffect, useState, useRef } from "react";
 import { SendIcon } from "lucide-react";
+import { sendToBot } from "@/function/chatBot/getMessage";
 
 type ClientMessage = {
   sender: string;
@@ -28,35 +29,37 @@ export default function ChatBot() {
     }
   }, [confessetian]);
 
-  async function sendToBot(message: string) {
-    const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {"Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{parts:[{text: message}]}]
-        })
-         
-       })
-       const data = await response.json();
-       if(!data){throw new Error("Error in fetching data from bot")}
+  function handleClick() {
+    if (userMessage !== "") {
+      // MessageSquareShare.push(userMessage)
+      setConfessetioan(true);
+      setClient("user");
+      messages.push({
+        sender: "user",
+        message: userMessage,
+      });
 
-       return(
-        data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I could not process your request."
-       )
-    } catch (error) {
-      console.log(error)
-      return "Sorry, there was an error processing your request."
+      const botResponse = sendToBot(userMessage).then((botMessage) => {
+        setConfessetioan(true);
+        setClient("bot");
+        messages.push({
+          sender: "bot",
+          message: botMessage || "No response from bot",
+        });
+      });
+      setMessage("");
     }
-  
-  }//end of sendToBot function
+  }
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
 
   return (
     <div className="flex flex-col items-center w-full h-[360px] :lgh-full p-2">
       <h1 className="bg-primary/20 text-sm md:text-lg font-bold text-blue-500 w-fit h-fit px-4 p-1 rounded-lg m-2">
-      ASK ME ANY QUETSION
+        ASK ME ANY QUETSION
       </h1>
 
       {/* this is the chat section */}
@@ -84,38 +87,18 @@ export default function ChatBot() {
 
       <input
         className="w-[70%] mb-2 text-black text-sm bg-[whitesmoke] rounded-md p-2 outline-none focus:shadow-lg shadow-green-800"
-      
         value={userMessage}
         placeholder="Ask me a question about myself"
         onChange={(e) => setMessage(e.target.value)}
+        onKeyDown={handleKeyDown} // Add this line
         type="text"
       />
       <button
+        id="sendBtn"
         className="p-2 px-4 font-bold text-lg text-primary bg-primary/20 rounded-md"
-        onClick={() => {
-          if (userMessage !== "") {
-            // MessageSquareShare.push(userMessage)
-            setConfessetioan(true);
-            setClient("user");
-            messages.push({
-              sender: "user",
-              message: userMessage,
-            });
-
-            const botResponse = sendToBot(userMessage).then((botMessage)=>{
-              setConfessetioan(true);
-              setClient("bot");
-              messages.push({
-                sender: "bot",
-                message: botMessage || "No response from bot",
-              });
-
-            })
-            setMessage("");
-          }
-        }}
+        onClick={() => handleClick()}
       >
-       <SendIcon className="text-primary" size={20}/>
+        <SendIcon className="text-primary" size={20} />
       </button>
     </div>
   );
