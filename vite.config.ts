@@ -7,6 +7,15 @@ export default defineConfig({
   // base: process.env.VITE_BASE_PATH || "/Online-Portfolio",
   base: "/",
   plugins: [react()],
+  
+  optimizeDeps: {
+    include: [
+      'langchain',
+      '@langchain/community',
+      '@langchain/core',
+      '@langchain/google-genai'
+    ]
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -14,6 +23,7 @@ export default defineConfig({
     },
   },
   build: {
+
     outDir: "dist",
     emptyOutDir: true,
     sourcemap: process.env.NODE_ENV !== "production", 

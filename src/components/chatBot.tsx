@@ -2,6 +2,7 @@ import MessageDisplay from "./ui/chatBot/messageDisplay";
 import { useEffect, useState, useRef } from "react";
 import { SendIcon } from "lucide-react";
 import { sendToBot } from "@/function/chatBot/getMessage";
+import { getMessage } from "@/function/chatBot/getMessage";
 
 type ClientMessage = {
   sender: string;
@@ -39,17 +40,37 @@ export default function ChatBot() {
         message: userMessage,
       });
 
-      const botResponse = sendToBot(userMessage).then((botMessage) => {
+      const botResponse = getMessage(userMessage).then((botMessage) => {
         setConfessetioan(true);
+
+        if("can't answer that question right now" === botMessage){
+          
+          console.log(userMessage)
+        }//end of if statement
         setClient("bot");
         messages.push({
           sender: "bot",
           message: botMessage || "No response from bot",
         });
-      });
+      });//end botResponse
+      getMessage(userMessage)
+
+/*
+      const botResponse1 = getMessage(userMessage)
+      if(botResponse1){
+        setConfessetioan(true);
+        setClient("bot");
+         messages.push({
+          sender: "bot",
+          message: botResponse1 || "No response from bot",
+        });
+
+      }
+    */  
       setMessage("");
     }
-  }
+  }//end of handle click
+  
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleClick();
