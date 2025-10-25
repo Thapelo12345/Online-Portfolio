@@ -4,6 +4,7 @@ import { SendIcon } from "lucide-react";
 import { sendToBot } from "@/function/chatBot/getMessage";
 import { getMessage } from "@/function/chatBot/getMessage";
 
+
 type ClientMessage = {
   sender: string;
   message: string;
@@ -43,19 +44,26 @@ export default function ChatBot() {
       const botResponse = getMessage(userMessage).then((botMessage) => {
         setConfessetioan(true);
 
-        if("can't answer that question right now" === botMessage){
+        // saving the question and answer to a json file
+        if ("can't answer that question right now" === botMessage) {
           
-          console.log(userMessage)
-        }//end of if statement
+          fetch("/questions.json").then((res)=> res.json())
+          .then((data) => {
+            data.push(userMessage)
+          })
+          .catch((error)=> console.log(error))
+
+          console.log(userMessage);
+        } //end of if statement
         setClient("bot");
         messages.push({
           sender: "bot",
           message: botMessage || "No response from bot",
         });
-      });//end botResponse
-      getMessage(userMessage)
+      }); //end botResponse
+      getMessage(userMessage);
 
-/*
+      /*
       const botResponse1 = getMessage(userMessage)
       if(botResponse1){
         setConfessetioan(true);
@@ -66,11 +74,11 @@ export default function ChatBot() {
         });
 
       }
-    */  
+    */
       setMessage("");
     }
-  }//end of handle click
-  
+  } //end of handle click
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleClick();
