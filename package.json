@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "tsx server.ts",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -51,6 +51,7 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
+    "express": "^5.1.0",
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "input-otp": "^1.2.4",
@@ -70,11 +71,12 @@
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.176.0",
     "vaul": "^0.9.3",
-    "zod": "^3.23.8"
+    "vite-express": "^0.21.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/express": "^5.0.4",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -90,6 +92,8 @@
     "tailwind-scrollbar": "^3.1.0",
     "tailwindcss": "^3.4.11",
     "terser": "^5.40.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"

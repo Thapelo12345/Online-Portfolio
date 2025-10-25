@@ -47,11 +47,15 @@ export default function ChatBot() {
         // saving the question and answer to a json file
         if ("can't answer that question right now" === botMessage) {
           
-          fetch("/questions.json").then((res)=> res.json())
-          .then((data) => {
-            data.push(userMessage)
-          })
-          .catch((error)=> console.log(error))
+            fetch("http://localhost:3000/save-question", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({userQuestion: userMessage }), // sending the message text
+      }).then((res)=> res.json())
+      .then((data)=> console.log("Success:", data))
+      .catch((error)=> console.error("Error:", error));
 
           console.log(userMessage);
         } //end of if statement

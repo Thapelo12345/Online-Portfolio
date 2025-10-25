@@ -6,7 +6,9 @@ import path from "path";
 export default defineConfig({
   // base: process.env.VITE_BASE_PATH || "/Online-Portfolio",
   base: "/",
-  plugins: [react()],
+  plugins: [
+    react()
+  ],
   
   optimizeDeps: {
     include: [
